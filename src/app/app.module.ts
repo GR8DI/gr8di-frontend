@@ -11,7 +11,9 @@ import { JobsComponent } from './jobs/jobs.component';
 import { ContactComponent } from './contact/contact.component';
 import { ErrorComponent } from './error/error.component';
 import { PolicyComponent } from './policy/policy.component';
+import { InternshipComponent } from './internship/internship.component';
 import { HashLocationStrategy, LocationStrategy } from '@angular/common';
+
 
 
 const routes: Routes = [
@@ -22,6 +24,7 @@ const routes: Routes = [
   { path: 'jobs', component: JobsComponent },
   { path: 'contact', component: ContactComponent },
   { path: 'policy', component: PolicyComponent },
+  { path: 'internship', component: InternshipComponent },
   { path: '**', component: ErrorComponent }
 ];
 
@@ -35,7 +38,8 @@ const routes: Routes = [
     JobsComponent,
     ContactComponent,
     ErrorComponent,
-    PolicyComponent
+    PolicyComponent,
+    InternshipComponent
   ],
   imports: [
     BrowserModule,
