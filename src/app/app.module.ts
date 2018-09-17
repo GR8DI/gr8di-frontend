@@ -16,6 +16,7 @@ import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 
 
 
+
 const routes: Routes = [
   // basic routes
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -39,7 +40,8 @@ const routes: Routes = [
     ContactComponent,
     ErrorComponent,
     PolicyComponent,
-    InternshipComponent
+    InternshipComponent,
+    
   ],
   imports: [
     BrowserModule,

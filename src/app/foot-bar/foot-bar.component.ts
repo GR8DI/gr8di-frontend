@@ -10,7 +10,6 @@ export class FootBarComponent implements OnInit {
 
    nYear : number;
 
-
   //tweets : string[];
 
   constructor() {
