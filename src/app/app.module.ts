@@ -1,6 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { HttpClientModule } from '@angular/common/http';
+import { DataService } from './data.service';
 
 import { AppComponent } from './app.component';
 import { FootBarComponent } from './foot-bar/foot-bar.component';
@@ -13,7 +15,8 @@ import { ErrorComponent } from './error/error.component';
 import { PolicyComponent } from './policy/policy.component';
 import { InternshipComponent } from './internship/internship.component';
 import { HashLocationStrategy, LocationStrategy } from '@angular/common';
-
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
 
 
 
@@ -45,9 +48,11 @@ const routes: Routes = [
   ],
   imports: [
     BrowserModule,
-    RouterModule.forRoot(routes)
+    HttpClientModule,
+    RouterModule.forRoot(routes),
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
-  providers: [{provide: LocationStrategy, useClass: HashLocationStrategy}],
+  providers: [{provide: LocationStrategy, useClass: HashLocationStrategy}, DataService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

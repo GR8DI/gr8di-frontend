@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { SwUpdate } from '@angular/service-worker';
+import { DataService } from './data.service';
 
 @Component({
   selector: 'app-root',
@@ -7,5 +9,13 @@ import { Router } from '@angular/router';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  constructor(private router: Router) { }
+
+
+  constructor(private router: Router, updates: SwUpdate, private data: DataService) {
+    updates.available.subscribe(event => {
+
+      updates.activateUpdate().then(() => document.location.reload());
+    })
+
+   }
 }
