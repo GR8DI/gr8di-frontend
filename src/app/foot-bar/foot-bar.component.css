@@ -1,5 +1,5 @@
 #footer {
     position: relative;
     clear: both;
-    overflow: visible;
+    overflow: auto;
 }
