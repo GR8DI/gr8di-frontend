@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import { DataService } from './data.service';
+import { NgxTwitterTimelineModule } from 'ngx-twitter-timeline';
 
 import { AppComponent } from './app.component';
 import { FootBarComponent } from './foot-bar/foot-bar.component';
@@ -50,6 +51,7 @@ const routes: Routes = [
     BrowserModule,
     HttpClientModule,
     RouterModule.forRoot(routes),
+    NgxTwitterTimelineModule.forRoot(),
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
   providers: [{provide: LocationStrategy, useClass: HashLocationStrategy}, DataService],
